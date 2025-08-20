@@ -3,7 +3,6 @@
 ![Computer Vision](https://img.shields.io/badge/ComputerVision-YOLOv8-blue?logo=opencv)  
 ![Python](https://img.shields.io/badge/Python-3.10+-yellow?logo=python)  
 ![DeepSORT](https://img.shields.io/badge/Tracking-DeepSORT-green)  
-![License](https://img.shields.io/badge/License-MIT-red)  
 
 ---
 
