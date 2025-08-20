@@ -1,0 +1,41 @@
+flowchart TD
+    subgraph Input
+        A[Video Input] --> B[Frame Extraction]
+    end
+
+    subgraph "YOLOv8 Detection"
+        B --> C[Frame Processing]
+        C --> D[Object Detection]
+        D --> E[Bounding Box Generation]
+        E --> F[Confidence Score Assignment]
+    end
+
+    subgraph "Deep SORT Tracking"
+        F --> G[Feature Extraction]
+        
+        subgraph "Kalman Filter Process"
+            H[Motion Prediction]
+            I[State Update]
+            J[Error Correction]
+            H --> I
+            I --> J
+            J -.-> H
+        end
+        
+        G --> H
+        G --> K[Object Re-identification]
+        
+        K --> L[ID Assignment/Update]
+        J --> L
+    end
+
+    subgraph Output
+        L --> M[Tracked Objects]
+        M --> N[Visualization]
+        N --> O[Final Output Video]
+    end
+
+    style Input fill:#e1f5fe
+    style YOLOv8 Detection fill:#fff3e0
+    style Deep SORT Tracking fill:#f3e5f5
+    style Output fill:#e8f5e9
